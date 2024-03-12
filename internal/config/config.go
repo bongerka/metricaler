@@ -7,7 +7,7 @@ import (
 )
 
 type Config struct {
-	HTTPServer *HttpServerConfig `yaml:"HTTP_SERVER"`
+	HTTPServer *HTTPServerConfig `yaml:"HTTP_SERVER"`
 	Repo       *RepoConfig       `yaml:"REPOSITORY"`
 }
 
@@ -15,7 +15,7 @@ type RepoConfig struct {
 	Size int `yaml:"SIZE_MAP"`
 }
 
-type HttpServerConfig struct {
+type HTTPServerConfig struct {
 	Addr string `yaml:"ADDR"`
 }
 
