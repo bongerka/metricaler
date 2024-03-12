@@ -22,7 +22,10 @@ func NewRepository(size int) *repository {
 func (r *repository) ChangeCounter(name string, value int64) {
 	newName := fmt.Sprintf("%s_%s", metric.Counter, name)
 
-	prev := r.conn[newName]
+	prev, ok := r.conn[newName]
+	if !ok {
+		r.conn[newName] = &metric.Metric{Type: metric.Counter, Value: 0}
+	}
 	newValue, ok := prev.Value.(int64)
 	if !ok {
 		lg.Errorf("counter is not int64 but %T", prev.Value)
