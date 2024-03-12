@@ -24,7 +24,7 @@ func (r *repository) ChangeCounter(name string, value int64) {
 
 	prev, ok := r.conn[newName]
 	if !ok {
-		prev = &metric.Metric{Type: metric.Counter, Value: 0}
+		prev = &metric.Metric{Type: metric.Counter, Value: int64(0)}
 	}
 	newValue, ok := prev.Value.(int64)
 	if !ok {
