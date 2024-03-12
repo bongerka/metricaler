@@ -1,0 +1,5 @@
+HTTP_SERVER:
+  ADDR: localhost:8080
+
+REPOSITORY:
+  SIZE_MAP: 10
