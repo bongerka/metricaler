@@ -15,12 +15,12 @@ func (service *Service) PostMetric(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	contentType := r.Header.Get("Content-Type")
-	if contentType != "text/plain" {
-		http.Error(w, "wrong input format(content-type)", http.StatusBadRequest)
-		lg.Warnf("validation: ")
-		return
-	}
+	//contentType := r.Header.Get("Content-Type")
+	//if contentType != "text/plain" {
+	//	http.Error(w, "wrong input format(content-type)", http.StatusBadRequest)
+	//	lg.Warnf("validation: %s", contentType)
+	//	return
+	//}
 
 	parts := strings.Split(r.URL.Path, "/")
 	if len(parts) != 5 {
